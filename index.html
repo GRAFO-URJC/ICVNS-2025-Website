@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--favicon-->
+    <link rel="icon" type="image/png" href="static/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="static/favicon/favicon.svg" />
+    
+    <title>ICVNS 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            flex: 1;
+            min-height: calc(100vh - 60px);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background-image: url("static/images/Montreal.jpg");
+            background-size: cover;
+            background-position: center;
+            animation: moveBackground 20s infinite alternate ease-in-out;
+            filter: brightness(0.95);
+        }
+
+        .content-wrapper {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 2rem auto;
+            z-index: 2;
+        }
+
+        .logo {
+            background: white;
+            padding: clamp(0.8rem, 2vw, 1.2rem);
+            border-radius: 10px;
+            margin: 20px 40px;  /* Increased margin on left and right */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .logo img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
+
+        .separator {
+            width: 100%;
+            height: 3px;
+            background: white;
+            margin: 15px 0;
+            border-radius: 2px;
+            opacity: 0.8;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.8);  /* Lighter background color for contrast */
+            color: black;  /* Change text color to black for better readability */
+            padding: clamp(1.5rem, 4vw, 2rem);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: background-color 0.3s ease;
+        }
+
+        .info-box:hover {
+            background: rgba(255, 255, 255, 1);  /* Fully opaque on hover */
+        }
+
+        .info-box h2 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 1rem;
+            font-weight: normal;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .info-box p {
+            margin: 1rem 0;
+            font-style: italic;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .button {
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .registration-date {
+            display: block;
+            font-size: 0.9em;
+            margin-top: 0.5rem;
+            color: #000;  /* Changed text color to black */
+            font-style: italic;
+        }
+
+        footer {
+            background: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                transform: scale(1.1) translateZ(0);
+            }
+            100% {
+                transform: scale(1.2) translateZ(0);
+            }
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: calc(100vh - 50px);
+            }
+
+            .content-wrapper {
+                width: 95%;
+                margin: 1rem auto;
+            }
+
+            .logo {
+                padding: 0.8rem;
+            }
+
+            footer {
+                height: 50px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .info-box h2 {
+                font-size: 1.1rem;
+            }
+
+            .info-box p {
+                font-size: 0.9rem;
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* For very tall screens */
+        @media (min-height: 1000px) {
+            .hero {
+                height: calc(100vh - 60px);
+            }
+        }
+
+        /* For landscape orientation on mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+
+            .content-wrapper {
+                margin: 0 auto;
+            }
+        }
+
+        .logo-wrapper {
+            max-width: 600px;  /* Set a maximum width for the logo */
+            margin: 0 auto;    /* Center the logo wrapper */
+        }
+
+        .disabled {
+            background: #888;  /* Darker gray background for better contrast */
+            color: #fff;       /* White text for visibility */
+            cursor: not-allowed; /* Change cursor to indicate it's disabled */
+            pointer-events: none; /* Prevent any click events */
+            opacity: 0.7;      /* Slightly transparent */
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="background"></div>
+        <div class="content-wrapper">
+            <div class="logo-wrapper">
+                <div class="logo">
+                    <img src="static/images/ICVNS2025.png" alt="ICVNS 2025 Conference Logo">
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div class="info-box">
+                <h2>11th International Conference Variable Neighborhood Search</h2>
+                <p>Jointly organized within the <i>Journées de l'Optimisation</i> by <a href="http://www.cirrelt.ca/">CIRRELT</a></p>
+                <p>From May 12th to May 14th, 2025, in Montreal, Canada</p>
+                <div class="button-container">
+                    <a href="#" class="button disabled">GO TO THE CONFERENCE WEBSITE</a>
+                    <span class="registration-date">Registration will open soon</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024-2025 ICVNS | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
