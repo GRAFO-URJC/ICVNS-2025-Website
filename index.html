@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--favicon-->
     <link rel="icon" type="image/png" href="static/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="static/favicon/favicon.svg" />
-    
+
     <title>ICVNS 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -24,10 +25,11 @@
             overflow-x: hidden;
         }
 
+
         .hero {
             position: relative;
             flex: 1;
-            min-height: calc(100vh - 60px);
+            min-height: 50vh;
             width: 100%;
             display: flex;
             align-items: center;
@@ -58,7 +60,8 @@
             background: white;
             padding: clamp(0.8rem, 2vw, 1.2rem);
             border-radius: 10px;
-            margin: 20px 40px;  /* Increased margin on left and right */
+            margin: 20px 40px;
+            /* Increased margin on left and right */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: fit-content;
             margin-left: auto;
@@ -66,10 +69,11 @@
         }
 
         .logo img {
-            width: auto;
+            max-width: 300px;
+            /* Reduced from original size */
             height: auto;
-            max-width: 100%;
-            display: block;
+            transition: transform 0.3s ease;
+            /* Optional hover effect */
         }
 
         .separator {
@@ -82,8 +86,10 @@
         }
 
         .info-box {
-            background: rgba(255, 255, 255, 0.8);  /* Lighter background color for contrast */
-            color: black;  /* Change text color to black for better readability */
+            background: rgba(255, 255, 255, 0.8);
+            /* Lighter background color for contrast */
+            color: black;
+            /* Change text color to black for better readability */
             padding: clamp(1.5rem, 4vw, 2rem);
             border-radius: 10px;
             backdrop-filter: blur(5px);
@@ -91,7 +97,8 @@
         }
 
         .info-box:hover {
-            background: rgba(255, 255, 255, 1);  /* Fully opaque on hover */
+            background: rgba(255, 255, 255, 1);
+            /* Fully opaque on hover */
         }
 
         .info-box h2 {
@@ -117,8 +124,8 @@
 
         .button {
             display: inline-block;
-            background: #fff;
-            color: #000;
+            background: #3498db;
+            color: #F5F5F5;
             padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
             border-radius: 5px;
             text-decoration: none;
@@ -128,14 +135,15 @@
         }
 
         .button:hover {
-            transform: translateY(-2px);
+            background: #fd9058;
         }
 
         .registration-date {
             display: block;
             font-size: 0.9em;
             margin-top: 0.5rem;
-            color: #000;  /* Changed text color to black */
+            color: #000;
+            /* Changed text color to black */
             font-style: italic;
         }
 
@@ -156,6 +164,7 @@
             0% {
                 transform: scale(1.1) translateZ(0);
             }
+
             100% {
                 transform: scale(1.2) translateZ(0);
             }
@@ -163,9 +172,6 @@
 
         /* Responsive breakpoints */
         @media (max-width: 768px) {
-            .hero {
-                min-height: calc(100vh - 50px);
-            }
 
             .content-wrapper {
                 width: 95%;
@@ -217,19 +223,556 @@
         }
 
         .logo-wrapper {
-            max-width: 600px;  /* Set a maximum width for the logo */
-            margin: 0 auto;    /* Center the logo wrapper */
+            max-width: 600px;
+            /* Set a maximum width for the logo */
+            margin: 0 auto;
+            /* Center the logo wrapper */
         }
 
         .disabled {
-            background: #888;  /* Darker gray background for better contrast */
-            color: #fff;       /* White text for visibility */
-            cursor: not-allowed; /* Change cursor to indicate it's disabled */
-            pointer-events: none; /* Prevent any click events */
-            opacity: 0.7;      /* Slightly transparent */
+            background: #888;
+            /* Darker gray background for better contrast */
+            color: #fff;
+            /* White text for visibility */
+            cursor: not-allowed;
+            /* Change cursor to indicate it's disabled */
+            pointer-events: none;
+            /* Prevent any click events */
+            opacity: 0.7;
+            /* Slightly transparent */
+        }
+
+        .main-content {
+            background: white;
+            padding: 3rem 0;
+        }
+
+        .content-section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #0404ff;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .plenary-section {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .plenary-section h2 {
+            border-bottom: 2px solid #0404ff;
+        }
+
+        .plenary-photo {
+            width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .obituary-section {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .obituary-section h2 {
+            border-bottom: 2px solid #000000;
+        }
+
+        .obituary-photo {
+            width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dates-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .dates-list li {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-left: 4px solid #0404ff;
+        }
+
+        .committee-list {
+            columns: 2;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .obituary-section {
+                flex-direction: column;
+            }
+
+            .committee-list {
+                columns: 1;
+            }
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .styled-list {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .styled-list li {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .styled-list li::before {
+            content: "•";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+
+        .process-steps {
+            display: grid;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .step {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #0404ff;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #0404ff;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+
+        .step h4 {
+            margin: 0;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            .step-header {
+                gap: 0.8rem;
+            }
+
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1em;
+            }
+        }
+
+        .formatting-requirements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-link {
+            color: #0404ff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .important-note {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Registration Styles */
+        .registration-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .registration-card {
+            padding: 2rem;
+            border-radius: 10px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.2s ease;
+        }
+
+        .registration-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .package-title {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .package-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #0404ff;
+            margin: 1rem 0;
+        }
+
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .package-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .payment-method {
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .payment-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .registration-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            background: #3498db;
+            color: white;
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 2rem auto;
+            width: fit-content;
+            transition: background 0.2s ease;
+        }
+
+        .registration-button:hover {
+            background: #fd9058;
+        }
+
+        .arrow {
+            font-size: 1.2em;
+            transition: transform 0.2s ease;
+        }
+
+        .registration-button:hover .arrow {
+            transform: translateX(3px);
+        }
+
+        .important-notes {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .registration-options {
+                grid-template-columns: 1fr;
+            }
+
+            .package-price {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Publications Styles */
+        .publication-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .publication-card {
+            padding: 2rem;
+            border-radius: 10px;
+            background: white;
+            border: 1px solid #e0e0e0;
+        }
+
+        .publication-card.highlighted {
+            border: 2px solid #fd9058;
+            background: #fff5f0;
+        }
+
+        .pub-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Committees Styles */
+        .committee-group {
+            margin: 3rem 0;
+        }
+
+        .committee-group h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1rem;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-info {
+            text-align: center;
+        }
+
+        .member-info h4 {
+            color: #2c3e50;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .member-info p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0.3rem 0;
+        }
+
+        .member-contact {
+            margin-top: 0.5rem;
+        }
+
+        .member-contact a {
+            color: #3498db;
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+
+        /* Grid Layouts */
+        .founders-grid,
+        .chairs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .steering-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .committee-list {
+            columns: 2;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .committee-list li {
+            margin: 0.8rem 0;
+            padding: 0.5rem;
+            border-left: 2px solid #3498db;
+            break-inside: avoid;
+        }
+
+        @media (max-width: 768px) {
+            .steering-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .committee-list {
+                columns: 1;
+            }
+
+            .member-card {
+                margin: 1rem 0;
+            }
+        }
+
+        /* Registration Rates Table */
+        .registration-rates {
+            margin: 2rem 0;
+        }
+
+        .rates-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1px;
+            background: #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .rates-header,
+        .rate-row {
+            display: contents;
+        }
+
+        .rate-category,
+        .rate-period,
+        .rate-price {
+            padding: 1rem;
+            background: white;
+        }
+
+        .rates-header {
+            font-weight: bold;
+            background: #3498db;
+            color: white;
+        }
+
+        .rates-header .rate-category,
+        .rates-header .rate-period {
+            background: #3498db;
+        }
+
+        .rate-row:nth-child(odd) .rate-category,
+        .rate-row:nth-child(odd) .rate-price {
+            background: #f8f9fa;
+        }
+
+        .rate-price {
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .rate-category {
+            font-weight: 500;
+        }
+
+        /* Responsive Table */
+        @media (max-width: 600px) {
+            .rates-table {
+                grid-template-columns: 1fr;
+            }
+
+            .rate-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1px;
+            }
+
+            .rate-row .rate-category {
+                grid-column: span 2;
+            }
+
+            .rates-header {
+                display: none;
+            }
+
+            .rate-price::before {
+                content: attr(data-period);
+                display: block;
+                font-size: 0.8em;
+                color: #666;
+                margin-bottom: 0.3rem;
+            }
+
+            .rate-price[data-period="early"]::before {
+                content: "Early Bird";
+            }
+
+            .rate-price[data-period="regular"]::before {
+                content: "Regular Rate";
+            }
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
+
 <body>
     <div class="hero">
         <div class="background"></div>
@@ -242,19 +785,449 @@
             <div class="separator"></div>
             <div class="info-box">
                 <h2>11th International Conference Variable Neighborhood Search</h2>
-                <p>Jointly organized within the <i>Journées de l'Optimisation</i> by <a href="http://www.cirrelt.ca/">CIRRELT</a></p>
+                <p>Jointly organized within the <i>Journées de l'Optimisation</i> by <a target="_blank"
+                        href="https://symposia.cirrelt.ca/en">CIRRELT</a></p>
                 <p>May, 12th - 14th, 2025, in Montreal, Canada</p>
                 <div class="button-container">
-                    <a href="#" class="button disabled">GO TO THE CONFERENCE WEBSITE</a>
-                    <span class="registration-date">Registration will open soon</span>
+                    <a href="https://symposia.cirrelt.ca/JOPT2025/en/submit" target="_blank" class="button">SUBMIT YOUR
+                        WORK</a>
+                    <br>
+                    <br>
+                    <a href="#about-icvns" class="button secondary">MORE INFORMATION</a>
+                    <span class="registration-date">Submissions open until 31st March 2025</span>
                 </div>
             </div>
         </div>
     </div>
+
+    <main class="main-content">
+        <!-- Presentation Section -->
+        <section id="about-icvns" class="content-section">
+            <h2>About ICVNS 2025</h2>
+            <p>We are pleased to announce the upcoming <strong>International Conference on Variable Neighborhood Search
+                    (ICVNS)</strong>, which will take place in <strong>Montreal, Canada, from May 12 to May 14,
+                    2025</strong>.</p><br>
+
+            <p>This event brings together researchers, practitioners, and experts in <strong>optimization, heuristics,
+                    and metaheuristics</strong>, providing a platform to discuss the latest advancements in
+                <strong>Variable Neighborhood Search (VNS)</strong> and its applications.
+            </p>
+
+            <br>
+            <p>ICVNS 2025 will feature <strong>keynote talks from leading experts, technical sessions, and
+                    discussions</strong> on recent developments in combinatorial and global optimization, machine
+                learning, logistics, scheduling, and more. The conference will serve as a tribute to <strong>Pierre
+                    Hansen</strong>, the pioneer of Variable Neighborhood Search, whose work has had a profound impact
+                on the field.</p>
+        </section>
+        <!-- Obituary Section -->
+        <section class="content-section">
+            <div class="obituary-section">
+                <div>
+                    <h2>In Memoriam: Pierre Hansen</h2>
+                    <p>We deeply mourn the passing of Pierre Hansen on January 19, 2025, a brilliant mind whose
+                        contributions to optimization and heuristics have left an indelible mark on our community. As
+                        the Honorary Chair of the International Conference on Variable Neighborhood Search for many
+                        years, his legacy will continue to inspire researchers for years to come.</p>
+                    <br>
+                    <p>Beyond his academic achievements, those of us who had the privilege of knowing him will always
+                        remember his intellectual generosity, his passion for research, and his kindness. His absence
+                        leaves a great void, but his impact will endure through every study and advancement built upon
+                        his ideas.</p>
+                </div>
+                <img src="static/images/hansen.jpg" alt="Pierre Hansen" class="obituary-photo">
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="plenary-section">
+                <img src="static/images/jack.jpg" alt="Plenary Speaker" class="plenary-photo">
+                <div>
+                    <h2>Plenary Talk: Dr. Jack Brimberg</h2>
+
+                    <p>Dr. Brimberg is a prolific researcher who has made significant contributions to the development
+                        and analysis of heuristic methods, particularly variable neighborhood search (VNS), for solving
+                        complex location and optimization problems. His work spans a wide range of topics, including
+                        continuous location-allocation, p-median, p-center, and minimax models, often proposing novel
+                        solution approaches and analyzing their properties.</p>
+                    <br>
+                    <p>Throughout his career, Dr. Brimberg has collaborated with prominent researchers, the most notable
+                        ones Pierre Hansen and Nenad Mladenović, publishing numerous influential papers. He has also
+                        explored the use of different distance functions and norms in location models and has applied
+                        operations research techniques to diverse domains, including water resource management, oil
+                        pipeline design, sports analytics, and military/defense problems.</p>
+
+                </div>
+            </div>
+        </section>
+        <!-- Important Dates Section -->
+        <section class="content-section">
+            <h2>Important Dates</h2>
+            <ul class="dates-list">
+                <li><strong>6th January, 2025</strong>: Submissions open</li>
+                <li><strong>1st April, 2025</strong>: Submissions close</li>
+                <li><strong>7th April, 2025</strong>: Early bird registration closes</li>
+            </ul>
+        </section>
+
+        <!-- Submission Section -->
+        <section class="content-section">
+            <h2>Submission Guidelines</h2>
+
+            <div class="guidelines-content">
+                <h3>Key Information</h3>
+                <ul class="styled-list">
+                    <li><strong>Submission System:</strong><a href="https://symposia.cirrelt.ca/JOPT2025/en/submit"
+                            target="_blank" class="highlight-link"> Joint JOPT/ICVNS portal<a>.</li>
+                    <li><strong>Abstract Length:</strong> 250-300 words (strict limit).</li>
+                    <li><strong>Topics:</strong> VNS methodology applied to combinatorial optimization problems, such as
+                        machine learning integration, graph problems, logistics, or scheduling among others.</li>
+                </ul>
+
+                <h3>Submission Process</h3>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h4>Abstract Preparation</h4>
+                        </div>
+                        <p>Include: Title, authors, affiliations, and keywords (3-5). Clearly state
+                            contributions and originality of work.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h4>Online Submission</h4>
+                        </div>
+                        <p>Submit your abstract through our <a href="https://symposia.cirrelt.ca/JOPT2025/en/submit"
+                                target="_blank" class="highlight-link">joint submission
+                                portal</a>.</p>
+                    </div>
+
+
+                </div>
+
+                <h3>Formatting Requirements</h3>
+                <div class="formatting-requirements">
+                    <div class="requirement">
+                        <h4>Abstract Structure</h4>
+                        <ul class="styled-list">
+                            <li>Title</li>
+                            <li>Authors</li>
+                            <li>Keywords</li>
+                            <li>Problem statement and context</li>
+                            <li>Methodological approach</li>
+                            <li>Key innovations</li>
+                            <li>Main results/contributions</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <a href="https://symposia.cirrelt.ca/JOPT2025/en/submit" target="_blank" class="button">SUBMIT YOUR
+                    WORK</a>
+                <h3>Important Notes</h3>
+                <ul>
+                    <li>Submissions must be original and unpublished.</li>
+                    <li>Accepted abstracts require at least one author registration.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section class="content-section">
+            <h2>Registration</h2>
+
+            <div class="registration-content">
+                <!--
+                <div class="registration-rates">
+                    <h3>Registration Rates</h3>
+                    
+                    <div class="rates-table">
+                        <div class="rates-header">
+                            <div class="rate-category"></div>
+                            <div class="rate-period">Until April 7, 2025</div>
+                            <div class="rate-period">After April 7, 2025</div>
+                        </div>
+                        
+                        <div class="rate-row">
+                            <div class="rate-category">Regular</div>
+                            <div class="rate-price">Can$440</div>
+                            <div class="rate-price">Can$550</div>
+                        </div>
+                        
+                        <div class="rate-row">
+                            <div class="rate-category">Postdoctoral Fellow</div>
+                            <div class="rate-price">Can$250</div>
+                            <div class="rate-price">Can$300</div>
+                        </div>
+                        
+                        <div class="rate-row">
+                            <div class="rate-category">Postdoctoral fellow + industrial cocktail </div>
+                            <div class="rate-price">Can$260</div>
+                            <div class="rate-price">Can$310</div>
+                        </div>
+
+                        <div class="rate-row">
+                            <div class="rate-category">Student</div>
+                            <div class="rate-price">Can$120</div>
+                            <div class="rate-price">Can$140</div>
+                        </div>
+                        <div class="rate-row">
+                            <div class="rate-category">Student + industrial cocktail</div>
+                            <div class="rate-price">Can$130</div>
+                            <div class="rate-price">Can$150</div>
+                        </div>
+                    </div>
+                </div>
+        -->
+                <p>Please, visit <a href="https://symposia.cirrelt.ca/JOPT2025/en/registration" target="_blank"
+                        class="highlight-link"> the JOPT page</a> for preliminary price details.</p>
+                <div>
+                    <h3>Important Notes</h3>
+                    <ul>
+                        <li>All prices in Canadian Dollars (Can$).</li>
+                        <li>Student rates require valid student ID.</li>
+                        <li>Registration includes access to all sessions and conference materials.</li>
+                        <li>The registration fees include coffee breaks, "Wine and cheese" party on Monday, May 12 and
+                            access to all presentations.</li>
+                        <li>An industrial cocktail will be organized on May 13. Postdoctoral fellows and students in
+                            their final year of study who will be looking for work in the near future are invited to
+                            participate. The number of participants is limited.</li>
+                        <li>Cancellations must be received in writing; no refunds will be issued after April 12, 2025.
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="https://symposia.cirrelt.ca/JOPT2025/en/register" target="_blank"
+                    class="registration-button disabled">
+                    Registrations not available yet
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Publications Section -->
+        <section class="content-section">
+            <h2>Publications & Dissemination</h2>
+
+            <div class="publications-content">
+                <div class="publication-columns">
+                    <!-- Book of Abstracts -->
+                    <div class="publication-card highlighted">
+                        <div class="pub-header">
+                            <div class="academic-icon"></div>
+                            <h3>Book of Abstracts</h3>
+                        </div>
+                        All accepted abstracts will be published in the Book of Abstracts, available at the conference.
+                    </div>
+
+                    <!-- LNCS Special Volume -->
+                    <div class="publication-card">
+                        <div class="pub-header">
+                            <div class="academic-icon"></div>
+                            <h3>LNCS Post-Conference Volume</h3>
+                        </div>
+                        The authors of the best papers will be invited to submit extended versions to a special volume
+                        of Lecture Notes in Computer Science (LNCS).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Committees Section -->
+        <section class="content-section">
+            <h2>Committees</h2>
+
+            <!-- Founders -->
+            <div class="committee-group">
+                <h3>Founders</h3>
+                <div class="founders-grid">
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="static/images/nenad.jpeg" alt="Nenad Mladenović">
+                        </div>
+                        <div class="member-info">
+                            <h4>Nenad Mladenović (1951-2022)</h4>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="static/images/hansen.jpg" alt="Pierre Hansen">
+                        </div>
+                        <div class="member-info">
+                            <h4>Pierre Hansen (1940-2025)</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conference Chairs -->
+            <div class="committee-group">
+                <h3>Conference Chairs</h3>
+                <div class="chairs-grid">
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="static/images/aloise.png" alt="Daniel Aloise">
+                        </div>
+                        <div class="member-info">
+                            <h4>Daniel Aloise</h4>
+                            <p>Full Professor<br>
+                                Polytechnique Montréal, Canada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steering Committee -->
+            <div class="committee-group">
+                <h3>Steering Committee</h3>
+                <div class="steering-grid">
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="static/images/eduardo.jpg" alt="Eduardo García Pardo">
+                        </div>
+                        <div class="member-info">
+                            <h4>Eduardo García Pardo</h4>
+                            <p>Full Professor<br>
+                                Universidad Rey Juan Carlos, Spain</p>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="static/images/moreno.jpg" alt="José Andrés Moreno Pérez">
+                        </div>
+                        <div class="member-info">
+                            <h4>José Andrés Moreno Pérez</h4>
+                            <p>Full Professor<br>
+                                Universidad de La Laguna, Spain</p>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="static/images/angelo.jpg" alt="Angelo Sifaleras">
+                        </div>
+                        <div class="member-info">
+                            <h4>Angelo Sifaleras</h4>
+                            <p>Full Professor<br>
+                                University of Macedonia, Greece</p>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="static/images/rachid.jpg" alt="Rachid Benmansour">
+                        </div>
+                        <div class="member-info">
+                            <h4>Rachid Benmansour</h4>
+                            <p>Professor<br>
+                                INSEA, Morocco</p>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="static/images/tatjana_davidovic.jpg" alt="Tatjana Davidovic">
+                        </div>
+                        <div class="member-info">
+                            <h4>Tatjana Davidovic</h4>
+                            <p>Research Professor<br>
+                                Mathematical Institute, Serbian Academy of Sciences</p>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="static/images/dragan.jpg" alt="Dragan Urosevic">
+                        </div>
+                        <div class="member-info">
+                            <h4>Dragan Urosevic</h4>
+                            <p>Research Professor<br>
+                                Mathematical Institute, Serbian Academy of Sciences</p>
+                            <div class="member-contact">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programme Committee -->
+            <!-- Programme Committee -->
+            <div class="committee-group">
+                <h3>Programme Committee</h3>
+                <ul class="committee-list">
+                    <li>Abraham Duarte - Universidad Rey Juan Carlos, Spain</li>
+                    <li>Ada Alvarez - Universidad Autónoma de Nuevo León, México</li>
+                    <li>Adriana Gabor - Khalifa University, U.A.E.</li>
+                    <li>Ali Allahverdi - Kuwait University, Kuwait</li>
+                    <li>Andrei Sleptchenko - Khalifa University, U.A.E.</li>
+                    <li>Angelo Sifaleras - University of Macedonia, Greece</li>
+                    <li>Anton Eremeev - Omsk State University, Russia</li>
+                    <li>Athanasios Migdalas - Luleå University of Technology, Sweden</li>
+                    <li>Bassem Jarboui - Higher Colleges of Technology, U.A.E.</li>
+                    <li>Celso Ribeiro - Universidade Federal Fluminense, Brazil</li>
+                    <li>Chandra Irawan - Nottingham University Business School, China</li>
+                    <li>Christos D. Tarantilis - Athens University of Economics, Greece</li>
+                    <li>Cláudio Alves - University of Minho, Braga, Portugal</li>
+                    <li>Daniel Aloise - Polytechnique Montréal, Canada</li>
+                    <li>Dragan Urošević - Mathematical Institute SANU, Serbia</li>
+                    <li>Eduardo G. Pardo - Universidad Rey Juan Carlos, Spain</li>
+                    <li>Emilio Carrizosa - University of Seville, Spain</li>
+                    <li>Gilles Caporossi - HEC Montréal, Canada</li>
+                    <li>Günther Raidl - TU Wien, Austria</li>
+                    <li>Hasan Turan - University of New South Wales, Australia</li>
+                    <li>Isaac Lozano-Osorio - Universidad Rey Juan Carlos, Spain</li>
+                    <li>J. Manuel Colmenar - Universidad Rey Juan Carlos, Spain</li>
+                    <li>Jack Brimberg - Royal Military College, Kingston, Canada</li>
+                    <li>Javier Yuste - Universidad Rey Juan Carlos, Spain</li>
+                    <li>Jesús Sánchez-Oro - Universidad Rey Juan Carlos, Spain</li>
+                    <li>John Beasley - Brunel University London, UK</li>
+                    <li>José A. Moreno-Perez - University of La Laguna, Spain</li>
+                    <li>Jun Pei - University of Hefei, China</li>
+                    <li>Karl Dörner - University of Vienna, Austria</li>
+                    <li>Kenneth Sörensen - University of Antwerp, Belgium</li>
+                    <li>Laureano Escudero - Universidad Rey Juan Carlos, Spain</li>
+                    <li>Leonidas Pitsoulis - Aristotle University of Thessaloniki, Greece</li>
+                    <li>Luiz Satoru Ochi - Fluminense Federal University, Brazil</li>
+                    <li>Marc Sevaux - University of Southern Brittany, France</li>
+                    <li>Marcone Jamilson Freitas Souza - UFOP, Brazil</li>
+                    <li>Michel Gendreau - École Polytechnique de Montréal, Canada</li>
+                    <li>Panos Pardalos - University of Florida, USA</li>
+                    <li>Patrick Siarry - Université Paris-Est Créteil Val de Marne, France</li>
+                    <li>Qiuhong Zhao - Beihang University, China</li>
+                    <li>Raca Todosijević - Mathematical Institute SANU, Serbia</li>
+                    <li>Rachid Benmansour - INSEA, Morocco</li>
+                    <li>Raja Jayaraman - Khalifa University, U.A.E.</li>
+                    <li>Raul Martín - Universidad Rey Juan Carlos, Spain</li>
+                    <li>Raúl Martín Santamaría - Universidad Rey Juan Carlos, Spain</li>
+                    <li>Richard Hartl - University of Vienna, Austria</li>
+                    <li>Rustam Mussabayev - National Institute of Information Security Development, Kazakhstan</li>
+                    <li>Said Salhi - University of Kent, UK</li>
+                    <li>Saïd Hanafi - University of Valenciennes, France</li>
+                    <li>Sergio Cavero - Universidad Rey Juan Carlos, Spain</li>
+                    <li>Sergio Consoli - European Commission, Joint Research Centre, Belgium</li>
+                    <li>Sergio Gil Borras - Universidad Rey Juan Carlos, Spain</li>
+                    <li>Sergio Pérez-Peló - Universidad Rey Juan Carlos, Spain</li>
+                    <li>Tatiana Davidović - Mathematical Institute SANU, Serbia</li>
+                    <li>Teodor G. Crainic - Université du Québec à Montréal, Canada</li>
+                    <li>Varvara Raskazzova - Moscow Aviation Institute, Russia</li>
+                    <li>Vera Kovačević-Vujčić - University of Belgrade, Serbia</li>
+                    <li>Vitor Nazário Coelho - Universidade Federal Fluminense, Brazil</li>
+                    <li>Yannis Marinakis - Technical University of Crete, Greece</li>
+                    <li>Yuri Kochetov - Sobolev Institute of Mathematics, Russia</li>
+                    <li>Zorica Stanimirovic - University of Belgrade, Serbia</li>
+                </ul>
+            </div>
+        </section>
+    </main>
     <footer>
         <p>© 2024-2025 ICVNS | All Rights Reserved</p>
     </footer>
 </body>
-<script data-goatcounter="https://icvns2025.goatcounter.com/count" 
-        async src="http://gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://icvns2025.goatcounter.com/count" async src="http://gc.zgo.at/count.js"></script>
+
 </html>
