@@ -786,6 +786,37 @@
         html {
             scroll-behavior: smooth;
         }
+        /* Sponsors Section */
+.sponsor-logos {
+    text-align: center;
+    padding: 2rem 0;
+    background: #f8f9fa;
+    margin-top: 2rem;
+    border-radius: 8px;
+}
+
+.sponsor-logo {
+    max-width: 250px;
+    height: auto;
+    margin: 1rem;
+    vertical-align: middle;
+    transition: opacity 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .sponsor-logos {
+        padding: 1.5rem 0;
+    }
+    
+    .sponsor-logo {
+        max-width: 200px;
+        margin: 0.5rem;
+    }
+}
     </style>
 </head>
 
@@ -1237,6 +1268,17 @@
                     <li>Yuri Kochetov - Sobolev Institute of Mathematics, Russia</li>
                     <li>Zorica Stanimirovic - University of Belgrade, Serbia</li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Sponsors -->
+        <section class="content-section">
+            <h2>Sponsors</h2>
+            <div class="sponsor-logos">
+                <a href="https://www.gerad.ca/en/home" target="_blank">
+
+                <img src="static/images/Gerad_Logo.jpg" alt="GERAD" class="sponsor-logo" >
+                </a>
             </div>
         </section>
     </main>
