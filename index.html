@@ -786,37 +786,38 @@
         html {
             scroll-behavior: smooth;
         }
+
         /* Sponsors Section */
-.sponsor-logos {
-    text-align: center;
-    padding: 2rem 0;
-    background: #f8f9fa;
-    margin-top: 2rem;
-    border-radius: 8px;
-}
+        .sponsor-logos {
+            text-align: center;
+            padding: 2rem 0;
+            background: #f8f9fa;
+            margin-top: 2rem;
+            border-radius: 8px;
+        }
 
-.sponsor-logo {
-    max-width: 250px;
-    height: auto;
-    margin: 1rem;
-    vertical-align: middle;
-    transition: opacity 0.3s ease;
-}
+        .sponsor-logo {
+            max-width: 250px;
+            height: auto;
+            margin: 1rem;
+            vertical-align: middle;
+            transition: opacity 0.3s ease;
+        }
 
-.sponsor-logo:hover {
-    opacity: 0.8;
-}
+        .sponsor-logo:hover {
+            opacity: 0.8;
+        }
 
-@media (max-width: 768px) {
-    .sponsor-logos {
-        padding: 1.5rem 0;
-    }
-    
-    .sponsor-logo {
-        max-width: 200px;
-        margin: 0.5rem;
-    }
-}
+        @media (max-width: 768px) {
+            .sponsor-logos {
+                padding: 1.5rem 0;
+            }
+
+            .sponsor-logo {
+                max-width: 200px;
+                margin: 0.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -1053,7 +1054,47 @@
                 </a>
             </div>
         </section>
+        <!-- Location Section -->
+        <section class="content-section">
+            <h2>Conference Location</h2>
 
+            <div class="location-content">
+                <p>ICVNS 2025 (as part of Optimization Days 2025) will take place at <strong>HEC Montréal</strong>
+                    (Building #35 on the campus map), 3000, chemin de la Côte-Sainte-Catherine, Montréal (Québec),
+                    Canada H3T 2A7.</p>
+
+                <h3>Maps</h3>
+                <ul class="styled-list">
+                    <li><a href="https://symposia.cirrelt.ca/system/documents/000/000/212/carte-campus_original.pdf?1441306925"
+                            target="_blank" class="highlight-link">Campus Map</a></li>
+                    <li><a href="https://symposia.cirrelt.ca/system/documents/000/000/213/plan_acces_hec_montreal_original.gif?1441306925"
+                            target="_blank" class="highlight-link">Access Map</a></li>
+                </ul>
+
+
+                <div class="location-map" style="margin: 1.5rem 0; text-align: center;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.9271382637856!2d-73.61550042315557!3d45.50297513577142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a3127139211%3A0x7917c6e071e1b848!2sHEC%20Montr%C3%A9al!5e0!3m2!1sen!2sca!4v1708978408585!5m2!1sen!2sca"
+                        width="100%" height="250"
+                        style="border: 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666; text-align: center;">
+                        <strong>HEC Montréal</strong> - 3000, chemin de la Côte-Sainte-Catherine, Montréal (Québec),
+                        Canada H3T 2A7
+                    </p>
+                </div>
+            </div>
+            <h3>Getting There</h3>
+            <ul class="styled-list">
+                <li><strong>By metro:</strong> Université-de-Montréal station</li>
+                <li><strong>By bus:</strong> #51 (on Édouard-Montpetit) or #129 (on Côte-Sainte-Catherine)
+                </li>
+            </ul>
+            <p style="margin-top: 1rem;">For more information on Montreal's public transportation, please
+                consult the <a href="https://www.stm.info/en" target="_blank" class="highlight-link">STM
+                    website</a>.</p>
+        </section>
 
         <!-- Publications Section -->
         <section class="content-section">
@@ -1275,7 +1316,7 @@
             <div class="sponsor-logos">
                 <a href="https://www.gerad.ca/en/home" target="_blank">
 
-                <img src="static/images/Gerad_Logo_en.jpg" alt="GERAD" class="sponsor-logo" >
+                    <img src="static/images/Gerad_Logo_en.jpg" alt="GERAD" class="sponsor-logo">
                 </a>
             </div>
         </section>
