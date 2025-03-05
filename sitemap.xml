@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>https://icvns2025.org/</loc>
+      <loc>https://2025.icvns.com/</loc>
       <lastmod>2025-03-04</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://icvns2025.org/#about-icvns</loc>
+      <loc>https://2025.icvns.com/#about-icvns</loc>
       <lastmod>2025-03-04</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://icvns2025.org/static/images/ICVNS2025.webp</loc>
+      <loc>https://2025.icvns.com/static/images/ICVNS2025.webp</loc>
       <lastmod>2025-03-04</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>https://icvns2025.org/static/images/Montreal.webp</loc>
+      <loc>https://2025.icvns.com/static/images/Montreal.webp</loc>
       <lastmod>2025-03-04</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>https://icvns2025.org/static/images/hansen.webp</loc>
+      <loc>https://2025.icvns.com/static/images/hansen.webp</loc>
       <lastmod>2025-03-04</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>https://icvns2025.org/static/images/jack.webp</loc>
+      <loc>https://2025.icvns.com/static/images/jack.webp</loc>
       <lastmod>2025-03-04</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>https://icvns2025.org/static/favicon/favicon.svg</loc>
+      <loc>https://2025.icvns.com/static/favicon/favicon.svg</loc>
       <lastmod>2025-03-04</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.3</priority>
    </url>
    <url>
-      <loc>https://icvns2025.org/static/favicon/favicon-96x96.png</loc>
+      <loc>https://2025.icvns.com/static/favicon/favicon-96x96.png</loc>
       <lastmod>2025-03-04</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.3</priority>

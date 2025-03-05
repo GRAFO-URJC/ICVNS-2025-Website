@@ -8,4 +8,4 @@ Disallow:
 Crawl-delay: 10
 
 # Sitemap location
-Sitemap: https://icvns2025.org/sitemap.xml
+Sitemap: https://2025.icvns.com/sitemap.xml
